@@ -1,3 +1,26 @@
+def idcheck(change):
+    if {change} == 0:
+        {change} = "1"
+    elif {change} == 1:
+        {change} = "0"
+    elif {change} == 2:
+        {change} = "X"
+    elif {change} == 3:
+        {change} = "9"
+    elif {change} == 4:
+        {change} = "8"
+    elif {change} == 5:
+        {change} = "7"
+    elif {change} == 7:
+        {change} = "5"
+    elif {change} == 8:
+        {change} = "4"
+    elif {change} == 9:
+        {change} = "3"
+    elif {change} == 10:
+        {change} = "2"
+
+
 idnumber = input("输入身份证号码\n")
 tim = str(len(idnumber))
 if tim == "18":
@@ -22,28 +45,8 @@ if tim == "18":
     qx = int(q) * 2
     plusid = ax + bx + cx + dx + ex + fx + gx + hx + ix + jx + kx + lx + mx + nx + ox + px + qx
     tofid = plusid % 11
-    tofidstr = "null"
-    if tofid == 0:
-        tofidstr = "1"
-    elif tofid == 1:
-        tofidstr = "0"
-    elif tofid == 2:
-        tofidstr = "X"
-    elif tofid == 3:
-        tofidstr = "9"
-    elif tofid == 4:
-        tofidstr = "8"
-    elif tofid == 5:
-        tofidstr = "7"
-    elif tofid == 7:
-        tofidstr = "5"
-    elif tofid == 8:
-        tofidstr = "4"
-    elif tofid == 9:
-        tofidstr = "3"
-    elif tofid == 10:
-        tofidstr = "2"
-    if tofidstr == str(r):
+    checkstr = idcheck(tofid)
+    if checkstr == str(r):
         print("身份证号是正确的！")
     else:
         print("身份证号错误！")
